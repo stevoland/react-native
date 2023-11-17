@@ -1,7 +1,7 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react-native';
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
-import { Text, StyleSheet } from 'react-native';
+import { ComponentMeta, ComponentStory } from '@storybook/react-native';
+import React from 'react';
+import { StyleSheet, Text } from 'react-native';
 
 const Background = () => (
   <Text style={styles.text}>Change background color via Addons -&gt; Background</Text>
@@ -12,7 +12,6 @@ const styles = StyleSheet.create({
 });
 
 const BackgroundMeta: ComponentMeta<typeof Background> = {
-  title: 'BackgroundExample/Background CSF',
   component: Background,
   decorators: [withBackgrounds],
   parameters: {

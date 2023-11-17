@@ -1,6 +1,10 @@
 module.exports = {
   stories: [
-    '../components/**/*.stories.?(ts|tsx|js|jsx)',
+    {
+      directory: '../components',
+      files: '**/*.stories.?(ts|tsx|js|jsx)',
+      titlePrefix: 'Components',
+    },
     '../other_components/AnotherButton/AnotherButton.stories.tsx',
   ],
   addons: [
