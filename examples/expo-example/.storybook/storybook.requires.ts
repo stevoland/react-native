@@ -10,7 +10,7 @@ import "@storybook/addon-ondevice-actions/register";
 
 const normalizedStories = [
   {
-    titlePrefix: "",
+    titlePrefix: "Components",
     directory: "./components",
     files: "**/*.stories.?(ts|tsx|js|jsx)",
     importPathMatcher:
@@ -23,15 +23,16 @@ const normalizedStories = [
     ),
   },
   {
-    titlePrefix: "",
-    directory: "./other_components/AnotherButton",
-    files: "AnotherButton.stories.tsx",
-    importPathMatcher: /^\.[\\/](?:AnotherButton\.stories\.tsx)$/,
+    titlePrefix: "Components2",
+    directory: "./components2",
+    files: "**/*.stories.?(ts|tsx|js|jsx)",
+    importPathMatcher:
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/,
     // @ts-ignore
     req: require.context(
-      "../other_components/AnotherButton",
-      false,
-      /^\.[\\/](?:AnotherButton\.stories\.tsx)$/
+      "../components2",
+      true,
+      /^\.(?:(?:^|\/|(?:(?:(?!(?:^|\/)\.).)*?)\/)(?!\.)(?=.)[^/]*?\.stories\.(?:ts|tsx|js|jsx)?)$/
     ),
   },
 ];

@@ -1,7 +1,15 @@
 module.exports = {
   stories: [
-    '../components/**/*.stories.?(ts|tsx|js|jsx)',
-    '../other_components/AnotherButton/AnotherButton.stories.tsx',
+    {
+      directory: '../components',
+      files: '**/*.stories.?(ts|tsx|js|jsx)',
+      titlePrefix: 'Components',
+    },
+    {
+      directory: '../components2',
+      files: '**/*.stories.?(ts|tsx|js|jsx)',
+      titlePrefix: 'Components2',
+    },
   ],
   addons: [
     '@storybook/addon-ondevice-notes',
