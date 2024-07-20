@@ -82,6 +82,10 @@ function generate({ configPath, absolute = false, useJs = false }) {
 
   ${registerAddons}
 
+  // Workaround [TypeError: Cannot read property '__STORYBOOK_ADDON_INTERACTIONS_INSTRUMENTER_STATE__' of undefined]
+  // from @storybook/test
+  global.window.parent = global.window.parent || {}
+
   const normalizedStories = [${normalizedStories.join(',')}];
 
   ${useJs ? '' : globalTypes}
@@ -89,7 +93,7 @@ function generate({ configPath, absolute = false, useJs = false }) {
   const annotations = ${annotations};
 
   global.STORIES = normalizedStories;
-  
+
   ${useJs ? '' : '// @ts-ignore'}
   module?.hot?.accept?.();
 
